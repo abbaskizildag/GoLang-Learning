@@ -4,6 +4,18 @@ import "fmt"
 
 func main() {
 	//go'da sadece tek bir döngümüz var o da for. fakat 3 farklı senaryosu mevcut.
+
+	//1.kullanımı döngüde kullanacak değişken, kaça kadar döngünün devam etmesi ve döngünün artışı şeklinde
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	//aşağıdaki gibide kullanılabilir
+	k := 0
+	for ; k < 5; k++ {
+		fmt.Println(k)
+	}
+
 	var x, y, z int = 0, 1, 0
 
 	//1.örnek for kullanımı - fibonacci sayı sistemini for ile bulduk. her sayı öncekinin toplamından oluşur. 8 basamağa kadar yaptık.
@@ -21,11 +33,28 @@ func main() {
 		fmt.Printf("%d\n ", b)
 	}
 
-	//3.kullanım sonsuz döngü
+	//3.kullanım sonsuz döngü- Infinite Loop diye geçiyor.
 	/*for {
 		println("sonsuz bir döngü")
 	}
 	*/
+
+	//continue döngünün başına dönmemizi sağlayan bir ifade. ekranda 0,3,6,9 görünmeyecek.
+	for i := 0; i < 10; i++ {
+		if i%3 == 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+
+	//break durumunda döngüden çıkıyor.
+	for i := 0; i < 10; i++ {
+		if i == 0 {
+			break
+		}
+		fmt.Println(i)
+	}
+
 	//genel örnek. iç içe for. asal sayıları bulma
 	var i, j int
 
